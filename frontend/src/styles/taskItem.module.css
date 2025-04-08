@@ -1,0 +1,62 @@
+.taskItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  margin-bottom: 0.8rem;
+  border-radius: 10px;
+  background-color: rgb(245, 243, 243);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.taskItem:hover {
+  background-color: #eaf6ff;
+  transform: translateY(-2px);
+}
+
+.completed {
+  opacity: 0.5;
+  text-decoration: line-through;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  cursor: pointer;
+  flex: 1;
+}
+
+.texts {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.category {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #888;
+}
+
+.category::before {
+  content: '• ';
+}
+
+.deleteButton {
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: #ff4d4d;
+  transition: transform 0.2s ease;
+}
+
+.deleteButton:hover {
+  transform: scale(1.2);
+}
