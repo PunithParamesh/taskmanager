@@ -16,9 +16,9 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
-
+      // 'http://localhost:5000/api/auth/login'
     try {
-        const res = await fetch('http://localhost:5000/api/auth/login', {
+        const res = await fetch(`${process.env.REACT_APP_API_URL}/api/auth/login`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
              // <-- Important if backend sends cookies

@@ -13,7 +13,7 @@ function TaskPage() {
   useEffect(() => {
     const fetchTasks = async () => {
       try {
-        const res = await fetch('http://localhost:5000/api/tasks', {
+        const res = await fetch(`${process.env.REACT_APP_API_URL}/api/tasks`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -31,7 +31,7 @@ function TaskPage() {
 
   const addTask = async (task) => {
     try {
-      const res = await fetch('http://localhost:5000/api/tasks', {
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/api/tasks`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -49,7 +49,7 @@ function TaskPage() {
   const toggleTask = async (id) => {
     try {
       const taskToToggle = tasks.find((t) => t._id === id);
-      const res = await fetch(`http://localhost:5000/api/tasks/${id}`, {
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/api/tasks/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -69,7 +69,7 @@ function TaskPage() {
   const deleteTask = async (id) => {
     console.log(id);
     try {
-      await fetch(`http://localhost:5000/api/tasks/${id}`, {
+      await fetch(`${process.env.REACT_APP_API_URL}/api/tasks/${id}`, {
         method: 'DELETE',
         headers: {
           Authorization: `Bearer ${token}`,
